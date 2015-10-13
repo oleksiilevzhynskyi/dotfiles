@@ -1,10 +1,11 @@
+#ZSH
+alias zshconfig="nano ~/.zshrc"
+alias ohmyzsh="nano ~/.oh-my-zsh"
+
 #RNM
 alias cd_br="cd ~/projects/rhythm/code/branches"
 alias cd_a="cd_br; cd dev/adops/src/ruby; rvm_a;"
 alias cd_d="cd_br; cd dinghy; rvm_d;"
-
-alias rvm_a="rvm use --create 1.8.7@adops"
-alias rvm_d="rvm use --create 1.8.7@dinghy"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -87,10 +88,8 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="exec $SHELL -l"
 
 ## Rhythm aliases
-alias rhythm='cd ~/rhythm/code/dinghy && rvm use 1.8.7@dinghy'
 alias rspec='bundle exec rspec'
 alias rake='bundle exec rake'
-export DINGHY_HOST=olevzhyn.gl-cstack.com
 alias sync_time="ssh root@$1 'ntpdate -u pool.ntp.org' && sudo ntpdate -u pool.ntp.org"
 
 # pgsql aliases
@@ -105,4 +104,3 @@ alias git-remove-merged='git branch --merged | grep -v "\*" | xargs -n 1 git bra
 
 # misc
 ## projects
-

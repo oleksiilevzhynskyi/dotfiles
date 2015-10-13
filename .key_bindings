@@ -1,0 +1,5 @@
+# key binding
+bindkey "$(echotc kl)" backward-char
+bindkey "$(echotc kr)" forward-char
+bindkey "$(echotc ku)" up-line-or-history
+bindkey "$(echotc kd)" down-line-or-history

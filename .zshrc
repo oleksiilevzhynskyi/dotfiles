@@ -7,10 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -37,7 +33,7 @@ alias ohmyzsh="nano ~/.oh-my-zsh"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
@@ -51,9 +47,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/oracle/instantclient_11_2-1:$PATH"
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/opt/oracle/instantclient_11_2-1"
-
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -64,38 +57,10 @@ export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/opt/oracle/instantclient_11_2-1"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# key binding
-bindkey "$(echotc kl)" backward-char
-bindkey "$(echotc kr)" forward-char
-bindkey "$(echotc ku)" up-line-or-history
-bindkey "$(echotc kd)" down-line-or-history
-
-#noglob
-alias rake="noglob rake"
-alias svn="noglob svn"
-
-setopt nullglob
-
-#NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-# to allow parse the rake arguments correctly
-set -o noglob
-
-#rvm
-export rvm_project_rvmrc=1
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# bash complition
-autoload bashcompinit
-bashcompinit
-# [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in $HOME/.dotfiles/.{aliases,functions}; do
+for file in $HOME/.dotfiles/.{aliases,functions,env,key_bindings}; do
         [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
