@@ -2,13 +2,13 @@ p() {
     cd ~/projects/$1
 }
 # http://atechnicaltravesty.blogspot.com/2011/05/custom-tab-complete-and-bash-functions.html
-_p() {
-    local cur opts
-    cur="${COMP_WORDS[COMP_CWORD]}"
-    opts=$(cd ~/projects ; ls -d */. | sed 's|/./||')
-    COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
-}
-complete -F _p p
+# _p() {
+#     local cur opts
+#     cur="${COMP_WORDS[COMP_CWORD]}"
+#     opts=$(cd ~/projects ; ls -d */. | sed 's|/./||')
+#     COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+# }
+# complete -F _p p
 
 #speed test
 function speedtest(){

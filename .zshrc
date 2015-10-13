@@ -60,7 +60,7 @@ source $ZSH/oh-my-zsh.sh
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in $HOME/.dotfiles/.{aliases,functions,env,key_bindings}; do
+for file in $HOME/.dotfiles/.{env,key_bindings,aliases,functions}; do
         [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
