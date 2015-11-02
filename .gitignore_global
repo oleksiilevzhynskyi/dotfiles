@@ -1,0 +1,7 @@
+*~
+.DS_Store
+.ruby-version
+.ruby-gemset
+.local_config
+.bundle/*
+.gems/*

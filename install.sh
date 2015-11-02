@@ -8,12 +8,11 @@ DOT_DIR="$HOME/.dotfiles"
 function check_and_install {
   APP_NAME=$1
   CMD=$2
-  which $APP_NAME
   which -s $APP_NAME
   if [[ $? != 0 ]] ; then
     echo "$APP_NAME doesn't installed. Do you want to install it? [y/N]:"
     read input
-    if [[ "$input" == 'y' || "$input" = 'Y' ]]; then
+    if [[ "$input" = 'y' || "$input" = 'Y' ]]; then
       echo "Installing $APP_NAME with $CMD"
       $CMD
     fi;
@@ -48,16 +47,18 @@ check_and_install 'brew' 'ruby -e "$(curl -fsSL https://raw.githubusercontent.co
 # curl
 check_and_install 'curl' 'brew install curl'
 
-# zsh
-check_and_install 'zsh' 'brew install zsh zsh-completions'
-# zshconfig
-set_config ".zshrc"
-
 # git
 check_and_install 'git' 'brew install git'
-#.gitconfig
 set_config ".gitconfig"
+set_config ".gitignore_global"
 
+# zsh
+check_and_install 'zsh' 'brew install zsh zsh-completions'
+set_config ".zshrc"
+
+# rvm
+# check_and_install 'rvm' ''
+set_config ".pryrc"
 
 #ssh config
 echo "Let's init ssh"
