@@ -63,4 +63,8 @@ source $ZSH/oh-my-zsh.sh
 for file in $HOME/.dotfiles/.{env,key_bindings,aliases,functions}; do
         [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
+
+file=$HOME/.aliases.local;
+[ -r "$file" ] && [ -f "$file" ] && source "$file";
+
 unset file;
