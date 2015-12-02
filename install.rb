@@ -64,7 +64,14 @@ install_app 'zsh', 'brew install zsh zsh-completions'
 install_by_path '~/.oh-my-zsh', 'sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
 set_config ".zshrc"
 
-# rvm
+# node
+install_app 'node', 'brew install npm'
+install_app 'npm', 'brew install npm'
+install_app 'nvm', 'brew install nvm'
+system 'nvm i; nvm alias default node'
+system 'npm i -g eslint jshint gulp nodemon grunt'
+
+# ruby
 # check_and_install 'rvm' ''
 set_config ".pryrc"
 
