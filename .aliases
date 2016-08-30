@@ -2,11 +2,6 @@
 alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 
-#RNM
-alias cd_br="cd ~/projects/rhythm/code/branches"
-alias cd_a="cd_br; cd dev/adops/src/ruby; rvm_a;"
-alias cd_d="cd_br; cd dinghy; rvm_d;"
-
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -87,20 +82,28 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-## Rhythm aliases
-alias rspec='bundle exec rspec'
-alias rake='bundle exec rake'
-alias sync_time="ssh root@$1 'ntpdate -u pool.ntp.org' && sudo ntpdate -u pool.ntp.org"
-
 # pgsql aliases
 alias pg-start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 alias pg-stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias pg-initdb="initdb /usr/local/var/postgres -E utf8"
 
 # git
-alias git='noglob git'
+alias git='hub'
+# alias git='noglob git'
 alias git-root='cd $(git rev-parse --show-cdup)'
 alias git-remove-merged='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+
+# Docker
+alias initdoceck='eval "$(docker-machine env default)"'
+
+# TODO
+alias todo='subl ~/Dropbox/todo.org'
+
+# NGINX
+alias nginx_config='subl /usr/local/etc/nginx/nginx.conf'
+
+# Programming
+alias runhaskell='ghc --make'
 
 # misc
 ## projects
