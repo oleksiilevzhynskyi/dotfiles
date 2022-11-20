@@ -37,9 +37,10 @@
   lg = !"git lg1"
 [pull]
   default = current
+  rebase = true
 [core]
-  editor = vim
-  excludesfile = /Users/oleksiilevzhynskyi/.gitignore_global
+  editor = code --wait
+	excludesfile = /Users/oleksiilevzhynskyi/.gitignore_global
 [format]
   pretty = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [branch]
@@ -53,3 +54,16 @@
   tool = opendiff
 [difftool]
   prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/oleksiilevzhynskyi/.stCommitMsg

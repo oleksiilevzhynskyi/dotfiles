@@ -27,11 +27,11 @@ alias sdiff="svn diff $! | colordiff"
 alias svn-confl="svn st | grep '^C'"
 
 # Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
+# if ls --color > /dev/null 2>&1; then # GNU `ls`
+#	colorflag="--color"
+#else # OS X `ls`
+#	colorflag="-G"
+#fi
 
 # List all files colorized in long format
 alias l="ls -lF ${colorflag}"
@@ -88,7 +88,6 @@ alias pg-stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias pg-initdb="initdb /usr/local/var/postgres -E utf8"
 
 # git
-alias git='hub'
 # alias git='noglob git'
 alias git-root='cd $(git rev-parse --show-cdup)'
 alias git-remove-merged='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
